@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget passward</title>
+</head>
+<body>
+    <p>
+        Hi <%= user.name %>,
+    </p>
+    <br>
+    <br>
+    <p>We have received a request for changing your password.</p>
+    <br>
+    <p>If you want to change your password, please click below link.</p>
+    <br>
+    <a href="http://localhost:8000/user/change-pass/<%=user.id%>">http://localhost:8000/user/change-pass/<%=user.id%></a>
+    <br>
+    <br>
+    <p>Thank you</p>
+</body>
+</html>

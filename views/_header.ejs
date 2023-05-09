@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/header.css">
+<header>
+
+    <div class="nav">
+        <div class="app-name">
+            <a href="/"><h2>Home</h2></a>
+        </div>
+        <ul class="nav-items">
+            <%if (locals.user) {%>
+                <li>
+                    <a href="/user/sign-out">Sign-out</a>
+                </li>
+                <li>
+                    <a href="/user/profile/<%= user._id%>">Profile</a>
+                </li>
+            <%} else {%>
+                    <li>
+                        <a href="/user/sign-in">Sign-in</a>
+                    </li>
+                    <li>
+                        <a href="/user/sign-up">Sign-up</a>
+                    </li>
+            <% } %>
+        </ul>
+    </div>
+</header>

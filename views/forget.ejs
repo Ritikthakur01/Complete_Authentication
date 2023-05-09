@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/css/forget.css">
+
+<main>
+    <div class="container">
+        <div class="back">
+            <a href="/user/sign-in"><i class="fa-solid fa-circle-xmark"></i></a>
+        </div>
+        <div class="form_area">
+            <h1><%= title%></h1>
+
+            <form action="/user/forget-verify" method="post">
+                <input type="email" name="email" placeholder="Enter Email">
+                <button>Done</button>
+            </form>
+        </div>
+    </div>
+</main>

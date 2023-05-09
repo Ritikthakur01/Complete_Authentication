@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/sign_in.css">
+
+<main>
+    <div class="container">
+        <div class="form_area">
+            <h1>Sign-in</h1>
+
+            <form action="/user/create-session" method="post">
+                <input type="email" name="email" placeholder="Enter Email">
+                <input type="password" name="password" placeholder="Enter Password">
+                <button>Sign in</button>
+            </form>
+        </div>
+        <div class="forget">
+            <a href="/user/forget">Forget password?</a>
+        </div>
+        <div class="social_auth">
+            <div id="google_button">
+                <a href="/user/auth/google"><button>Google</button></a>
+            </div>
+
+            <div id="facebook_button">
+                <a href="/user/auth/facebook"><button>Facebook</button></a>
+            </div>
+        </div>
+    </div>
+
+</main>

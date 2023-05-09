@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/css/profile.css">
+<main>
+    
+    <%if (user.id==profile_user.id) {%>
+        <h2>
+            <div>
+                Name : <span><%= profile_user.name %></span>
+            </div>
+            <div>
+                Email : <span><%= profile_user.email %></span>
+            </div>
+        </h2>
+    <%}%>
+</main>
