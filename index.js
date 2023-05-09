@@ -6,7 +6,6 @@ const env= require("./config/environment")  //importing environment.js file
 const express= require("express") //importing express library file
 const app=express() 
 const port=env.port; //defining port number 
-const hostname="0.0.0.0"; //for hosting free
 
 const expresslayout= require("express-ejs-layouts"); //requiring express-ejs-layouts for setting layout
 
@@ -79,7 +78,7 @@ app.use("/",require("./routes"))
 
 
 // listen function used to run server at given port
-app.listen(port,hostname,function(err){
+app.listen(port,function(err){
     if(err){
         console.log(`Error while connecting with server : ${err}`)
         return;
