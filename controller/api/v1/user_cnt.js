@@ -1,10 +1,12 @@
 const User=require("../../../model/user");
-const bcrypt=require("bcrypt");
+const bcrypt=require("bcrypt"); //here bcrypt is used for creating random password 
 const mailer= require("../../../mails/verifyUser");
 const nodemailer = require("../../../config/nodemailer");
 
+
 module.exports.create_session=async function(req,res){
    try{
+    // if user is authenticate ,redirect to home
         if(req.isAuthenticated()){
             req.flash("success","Sign in successfully")
             return res.redirect("/")
@@ -14,27 +16,9 @@ module.exports.create_session=async function(req,res){
         console.log(err)
     }
 }
-// module.exports.create_session=async function(req,res){
-    // const user=await User.findOne({email:req.body.email});
 
-    // if(user){
-    //     let match=await bcrypt.compare(req.body.password,user.password);
-    //     if(match){
-    //         return res.redirect("/")
-    //     }
-    //     else{
-    //         console.log("Invalid Username/password")
-    //         return res.redirect("back")
-    //     }
-    // }
-    // else{
-    //     console.log("Invalid Username/password")
-    //     return res.redirect("back")
-    // }.
-    // req.flash("success","Sign In successfully")   
-    // return res.redirect("/")  
-// }
 
+// getting user data and store to database.
 module.exports.create=async function(req,res){   
     try{
         const isExist=await User.findOne({email:req.body.email});
@@ -70,7 +54,9 @@ module.exports.create=async function(req,res){
     }
 }
 
+// rendering profile
 module.exports.profile=async function(req,res){
+    // if user is authenticate, render profile page
     if(req.isAuthenticated()){
         let user= await User.findById(req.params.id);
         if(user){
@@ -84,16 +70,17 @@ module.exports.profile=async function(req,res){
         return res.redirect("back")
     }
 }
-
+// rendering sign up
 module.exports.sign_up=function(req,res){
     if(req.isAuthenticated()){
+
         return res.redirect("/")
     }
     return res.render("sign_up",{
         title:"Sign Up"
     })
 }
-
+// rendering sign in
 module.exports.sign_in=function(req,res){
     if(req.isAuthenticated()){
         return res.redirect("/")
@@ -105,7 +92,7 @@ module.exports.sign_in=function(req,res){
 
 module.exports.destroy=function(req,res){
     if(req.isAuthenticated()){
-       req.logout((err)=>{
+       req.logout((err)=>{ // logout is use to sign-out and delete session cookies from database
         if(err){
             console.log(err);
         }
@@ -117,14 +104,15 @@ module.exports.destroy=function(req,res){
     }
 }
 
+// verify function is use to verify user email , mail is sent to user provided email which will expire in next 5 mintues
 module.exports.verify=async function(req,res){
     if(req.isAuthenticated()){
         return res.redirect("/")
     }
     let user=await User.findById(req.params.id)
     if(user && !user.isVerified){
-        let Current_time=new Date().getTime();
-        let diff= user.mailTokenExpiry - Current_time
+        let Current_time=new Date().getTime(); //current time
+        let diff= user.mailTokenExpiry - Current_time //difference between mail sending time to current time
         if(diff > 0){
             user=await User.findByIdAndUpdate(req.params.id,{$set:{isVerified:true}})
             req.flash("success","Your email is verified")
@@ -140,7 +128,7 @@ module.exports.verify=async function(req,res){
         return res.redirect("/user/sign-in")
     }
 }
-
+//rendering forget password form page
 module.exports.forget=async function(req,res){
     if(req.isAuthenticated()){
         return res.redirect("/")
@@ -150,6 +138,7 @@ module.exports.forget=async function(req,res){
     }) 
 }
 
+// handelling data from forget password form
 module.exports.forget_verify=async function(req,res){
     try{
         if(req.isAuthenticated()){
@@ -171,6 +160,7 @@ module.exports.forget_verify=async function(req,res){
         }
     }
 }
+// rendering change password form and passing user in req
 module.exports.change_pass=async function(req,res){
     if(req.isAuthenticated()){
         return res.redirect("/")
@@ -185,6 +175,7 @@ module.exports.change_pass=async function(req,res){
     }
 }
 
+// handelling change password form data   
 module.exports.change_pass_verify=async function(req,res){
     if(req.isAuthenticated()){
         return res.redirect("/")

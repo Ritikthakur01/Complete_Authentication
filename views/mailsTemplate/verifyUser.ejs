@@ -4,14 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        button{
+            width: 100px;
+            height: 30px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #0d6efd;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top:20px;
+        }
+    </style>
     <title>Verification mail</title>
 </head>
 <body>
-    <p>Hii <%= user.name %>,</p>
+    <p>
+        Hi <span><b><%= user.name %></b></span>,
+    </p>
     <br>
     <br>
-    <p>Please click the link below to activate your account</p>
-    <a href="http://localhost:8000/user/verify/<%=user.id%>">http://localhost:8000/user/verify/<%=user.id%></a>
+    <p>Please click below activate button to active your account</p>
+    <a href="http://localhost:8000/user/verify/<%=user.id%>"><button>Activate</button></a>
     <br>
     <br>
     <p>Thank you</p>
