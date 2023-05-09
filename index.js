@@ -63,7 +63,7 @@ app.use(passport.initialize());
 
 app.use(passport.session());
 
-app.use(passport.setAuthenticatedUserforView); //calling setAuthenticatedUserforView function this function set user in locals
+app.use(passport.setAuthenticatedUserforView); //calling setAuthenticatedUserforView function this function set user in locals.
 
 
 
