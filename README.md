@@ -1,5 +1,6 @@
 # Complete_Authentication
 This project has complete Authentication system.
+<br/>
 ![ezgif com-video-to-gif](https://github.com/Ritikthakur01/Complete_Authentication/assets/114640486/c686b5ca-c9bf-4c8b-b17a-4ca69210dfb5)
 
 
