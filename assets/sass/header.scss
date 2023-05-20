@@ -1,13 +1,14 @@
 .nav{
-    width:100%;
-    height:5%;
+    position: absolute;
+    margin-top: 0px;
+    width:100vw;
+    height:10vh;
     display: flex;
     flex-direction: row;
-    background-color: rgb(34, 47, 61);
+    background-color:transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
     .app-name{
        width:120px;
        height:40px;
@@ -16,8 +17,10 @@
        justify-content: center;
 
        a{
+            font-size: larger;
             text-decoration: none;
             color: whitesmoke;
+            padding-left: 15px;
        }
     }
 
@@ -33,12 +36,13 @@
 
             a{
                 text-decoration: none;
-                color: wheat;
-
-                &:active,:visited{
-                    color: rgb(0, 0, 1);
+                color: rgb(243, 243, 243);
+                &:hover{
+                    transform: scale(1.3rem);
+                    color:rgb(72, 134, 202)
                 }
             }
+            
         }
     }
 }

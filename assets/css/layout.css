@@ -1,9 +1,17 @@
-body {
-  margin: 0;
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  background: black;
   box-sizing: border-box;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  padding: 0;
   font-weight: 700;
+}
+
+#canvas {
+  z-index: -1;
+  position: absolute;
 }
 
 /*# sourceMappingURL=layout.css.map */

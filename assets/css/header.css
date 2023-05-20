@@ -1,9 +1,11 @@
 .nav {
-  width: 100%;
-  height: 5%;
+  position: absolute;
+  margin-top: 0px;
+  width: 100vw;
+  height: 10vh;
   display: flex;
   flex-direction: row;
-  background-color: rgb(34, 47, 61);
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,8 +18,10 @@
   justify-content: center;
 }
 .nav .app-name a {
+  font-size: larger;
   text-decoration: none;
   color: whitesmoke;
+  padding-left: 15px;
 }
 .nav .nav-items {
   display: flex;
@@ -29,10 +33,11 @@
 }
 .nav .nav-items li a {
   text-decoration: none;
-  color: wheat;
+  color: rgb(243, 243, 243);
 }
-.nav .nav-items li a:active, .nav .nav-items li a :visited {
-  color: rgb(0, 0, 1);
+.nav .nav-items li a:hover {
+  transform: scale(1.3rem);
+  color: rgb(72, 134, 202);
 }
 
 /*# sourceMappingURL=header.css.map */

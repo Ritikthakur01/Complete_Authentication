@@ -1,11 +1,21 @@
 #body {
+  position: relative;
+  background-color: transparent;
+  z-index: -1;
+  top: 220px;
+  left: 34rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: auto;
-  height: 80vh;
-  background-color: rgb(76, 82, 88);
+}
+#body h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+#body h2 {
+  font-size: 2rem;
+  color: #fff;
 }
 
 /*# sourceMappingURL=home.css.map */

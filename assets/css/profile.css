@@ -1,20 +1,22 @@
-main {
-  height: 80vh;
-  width: auto;
+#profile {
+  position: relative;
+  background-color: transparent;
+  z-index: -1;
+  top: 220px;
+  left: 34rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  background-color: rgb(76, 82, 88);
-  margin: 0%;
+  align-items: center;
 }
-main h2 {
-  font-weight: 400;
-  color: black;
+#profile h2 {
+  font-size: 2rem;
+  color: #4a95c8;
 }
-main h2 div {
-  margin: 10px 0px;
+#profile h2 div {
+  margin: 10px 5px;
 }
-main h2 div span {
+#profile h2 div span {
   color: rgb(255, 255, 255);
 }
 
